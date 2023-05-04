@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Aware Contact Center Manager es una solución completa para la gestión de centros de contacto, ofreciendo herramientas avanzadas para mejorar la atención al cliente, la eficiencia operativa y la rentabilidad. Descubra nuestra plataforma omnicanal y potencie su negocio." />
+    <meta name="keywords" content="contact center, call center, gestión, atención al cliente, soporte, ventas, telemercadeo, retención, análisis, optimización, software, solución omnicanal, CRM, experiencia del cliente, multicanal" />
+    <meta property="og:title" content="Aware Contact Center Manager - Gestión de Centros de Contacto" />
+    <meta property="og:description" content="Optimice su centro de contacto con Aware Contact Center Manager, una solución omnicanal que le permite gestionar y mejorar la atención al cliente, ventas, soporte y retención en múltiples canales de comunicación." />
+    <meta property="og:image" content="./assets/images/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.awarecontactcenter.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aware Contact Center Manager - Gestión de Centros de Contacto" />
+    <meta name="twitter:description" content="Optimice su centro de contacto con Aware Contact Center Manager, una solución omnicanal que le permite gestionar y mejorar la atención al cliente, ventas, soporte y retención en múltiples canales de comunicación." />
+    <meta name="twitter:image" content="./assets/images/twitter-image.png" />
+    <title>AWARE - Contact Center Manager</title>
+    
+    <link rel="icon" href="./assets/favicons/apple-touch-icon-180x180.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./scss/styles.scss">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+
+  
+  
+  <body>
+    <div id="app"></div>
+    <script src="script.js"></script>
+
+<!--Navbar---------------------->
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg fixed-top shadow" style="background-color: #2c3e50; border-bottom-width: 10px;border-bottom: #ccc;" role="navigation" aria-current="true">
+        <a class="navbar-brand" ><img class="shadow-svg" src="./assets/evo.svg" style=" margin-left: 20px; height: 40px;"/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav ms-auto " style="padding-right: 12px">
+            <a class="nav-link linknav" href="#"><strong>PBX +57 333 033 46 76</strong></a>
+            <a class="nav-link linknav" href="#"><strong>SERVICIOS</strong></a>
+            <a class="nav-link linknav" href="#"><strong>CLOUD</strong></a>
+            
+            <a class="nav-link demo" data-bs-toggle="modal" data-bs-target="#contactModal"><strong>AGENDA UNA DEMO</strong></a>
+            
+
+          </div>
+        </div>
+      </nav>      
+    </div>
+    
+    <br></br>
+
+    <div class="row justify-content-center align-content-center" style="height: 600px; width: 100%;">
+      <div id="logoini" class="col-6 justify-content-center align-content-center" style="margin-top: 150px; height: 400px;"><img class="shadow-svg" src="./assets/logo/Logo Aware v3 - 1.2.png" alt="" style="padding-left: 50px;">
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+          
+<!-- Modal - formulario-->
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">SOLICITA UNA DEMO</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-2">
+                    <input type="text" class="form-control" id="empresa" placeholder="Empresa" required>
+                  </div>
+                  <div class="mb-2">
+                    <input type="text" class="form-control" id="cargo" placeholder="Cargo" required>
+                  </div>
+                  <div class="mb-2">
+                    <input type="text" class="form-control" id="name" placeholder="Nombre" required>
+                  </div>
+                  <div class="mb-2">
+                    <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" required>
+                  </div>
+                  <div class="mb-2">
+                    <select class="form-select" id="paises" onchange="actualizarCodigoTelefono()" required>
+                      <option selected disabled value="">Seleccione un país</option>
+                      <option value="Argentina">Argentina</option>
+                      <option value="Bolivia">Bolivia</option>
+                      <option value="Brasil">Brasil</option>
+                      <option value="Chile">Chile</option>
+                      <option value="Colombia">Colombia</option>
+                      <option value="Costa Rica">Costa Rica</option>
+                      <option value="Ecuador">Ecuador</option>
+                      <option value="El Salvador">El Salvador</option>
+                      <option value="España">España</option>
+                      <option value="Estados Unidos">Estados Unidos</option>
+                      <option value="Guatemala">Guatemala</option>
+                      <option value="Honduras">Honduras</option>
+                      <option value="México">México</option>
+                      <option value="Nicaragua">Nicaragua</option>
+                      <option value="Panamá">Panamá</option>
+                      <option value="Paraguay">Paraguay</option>
+                      <option value="Perú">Perú</option>
+                      <option value="Puerto Rico">Puerto Rico</option>
+                      <option value="República Dominicana">República Dominicana</option>
+                      <option value="Uruguay">Uruguay</option>
+                      <option value="Venezuela">Venezuela</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-3"><select class="form-select" id="codigoTelefono" disabled>
+                    </select></div>
+                    <div class="col-9"><input type="tel" class="form-control"   id="telefono" placeholder="Número de teléfono" required>
+                    </div>
+                  </div>
+                  <div class="mb-2">
+                    <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                  </div>
+                  <div class="mb-2">
+                    <textarea class="form-control" id="message" rows="3" placeholder="Mensaje" required></textarea>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="" id="marketing" value="checkedValue" checked>
+                    <label style="font-size: 10px;" class="form-check-label " for="marketing">
+                      Sí, me gustaría recibir comunicaciones de marketing sobre los productos, servicios y eventos de Aware.
+                    </label>
+                    
+                  </div>
+                  <div style="text-align: center;">
+                    <button type="submit" class="btn btn-primary">AGENDAR DEMO</button>
+                  </div>
+                    <div style="margin-top: 10px;">
+                      <label for="" style="font-size: 10px;">
+                        Al proporcionar esta información, acepta que podamos procesar sus datos personales de acuerdo con nuestra <a href="declaracion-de-privaciodad.html" >Declaración de privacidad</a>
+                      </label>
+                      
+
+
+                    </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+        <div class="col-6"  style="margin-top: 130px">
+          
+          <section class="key-features py-5">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                  <i class="bi bi-telephone-fill text-primary fs-1"></i>
+                  <h3 class="h5 mt-3 text-shadow" style="color: white;">Marcador Predictivo, Progresivo y Asistido</h3>
+                  
+                </div>
+        
+                <div class="col-md-4 mb-4" style="color: white;">
+                  <i class="bi bi-chat-right-fill text-primary fs-1"></i>
+
+                  <h3 class="h5 mt-3 text-shadow">Omnicanalidad</h3>
+                  
+                </div>
+        
+                <div class="col-md-4 mb-4" style="color: white;">
+                  <i class="bi bi-share-fill text-primary fs-1"></i>
+                 
+
+            
+                  <h3 class="h5 mt-3text-shadow" style="color: white;">Integración con múltiples plataformas</h3>
+                  
+                </div>
+                <div class="col-md-4 mb-4">
+                  <i class="bi bi-telephone-fill text-primary fs-1"></i>
+
+                  <p style="color: white;">Optimiza la eficiencia de tus agentes con nuestro avanzado sistema de marcación que se adapta a las necesidades de tu contact center.</p>
+                </div>
+        
+                <div class="col-md-4 mb-4" style="color: white;">
+                  <i class="bi bi-chat-right-fill text-primary fs-1"></i>
+
+                  <p>Conecta con tus clientes a través de WhatsApp, Telegram, Facebook, Instagram, Email y otras redes sociales en una única plataforma.</p>
+                </div>
+        
+                <div class="col-md-4 mb-4" style="color: white;">
+                  <i class="bi bi-share-fill text-primary fs-1"></i>
+
+                  <p>Integra Aware con tus sistemas y aplicaciones actuales para una gestión unificada y eficiente de tus operaciones de contact center.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="video-background mi-div">
+            <video autoplay muted loop >
+              <source src="./assets/videos/mixkit-open-office-space-914.mp4" type="video/webm">
+            </video>
+            <div class="overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div class="container shadow bg-primary" style="margin-top: -30px;">
+      <section class="container-fluid hero-section bg-primary text-white py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              
+              <h1 class="display-4 mb-3">Gestiona tu Contact Center de manera eficiente y proactiva</h1>
+              <p class="lead">Aware simplifica y optimiza la gestión de tu contact center, proporcionándote información en tiempo real y herramientas para tomar decisiones informadas.</p>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="container-flui text-center" style="height: 200px;"></div>  
+    <div class="container text-center">
+      <h4>¿Quieres mejorar tu negocio y superar tus expectativas? ¡Solicita una demo ahora mismo! En nuestra demo, podrás experimentar de primera mano cómo nuestra solución puede ayudarte a alcanzar tus objetivos.</h4>
+    </div>
+      <div class="container text-center ">
+        <h2 class="text-center">TE CONTACTAMOS ?</h2>
+        <form>
+
+          <div class="input-group justify-content-center"><input class="" placeholder="INGRESA TU TELEFONO" style="width: 300px;" type="tel" id="phone-number" name="phone-number" required><button class="btn btn-primary" style="width: 100px;" id="callback-button"><i class="fa-solid fa-phone fa-beat" style="color: #ffffff;"></i></button></div>
+        </form>
+        <div class="container-sm">
+          <p>Nuestros expertos están comprometidos en brindarte el mejor servicio posible y te aseguraremos que obtengas toda la información que necesitas para tomar una decisión informada. ¡Estamos deseando hablar contigo y ayudarte a alcanzar tus objetivos. Solicita una demo ahora mismo y descubre todo lo que podemos hacer por ti!</p>
+        </div>
+      </div>
+      <div class="container-fluid text-center" style="height: 200px;"></div> 
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="container-lg">
+      <div class="row">
+        
+        </div>
+        <div class="col col-6">
+          <div class="container-sm" id="demo-section">
+          
+          
+        </div></div>
+      </div>
+    </div>
+      
+       <div class="container-fluid">
+        <section class="aware-callmanager py-5">
+          <div class="container-fluid">
+            <div class="row">
+
+              <div class="col-lg-8 mx-auto text-center">
+                <img src="./assets/75550-girl-at-customer-call-center.gif" alt="">
+                <br><br><br><br>
+                <img  src="./assets/evo.svg" alt="" style="height: 100px;" >
+                <br><br><br><br>
+                <p class="lead">Aware Contact Center Manager es un completo CRM de call center que ofrece soluciones de negocio a través de sus múltiples medios de comunicación. Nuestra plataforma se adapta a tus necesidades y te ayuda a:</p>
+                <ul class="list-unstyled text-left">
+                  <li><i class="bi bi-dash"></i><i class="fa-solid fa-plus fa-beat-fade" style="color: #3b77de;"></i> Reducir costos operativos y de infraestructura</li>
+                  <li><i class="bi bi-dash"></i><i class="fa-solid fa-plus fa-beat-fade" style="color: #3b77de;"></i> Aumentar la productividad de tu equipo</li>
+                  <li><i class="bi bi-dash"></i><i class="fa-solid fa-plus fa-beat-fade" style="color: #3b77de;"></i> Conectarte con más clientes desde cualquier lugar</li>
+                  <li><i class="bi bi-dash"></i><i class="fa-solid fa-plus fa-beat-fade" style="color: #3b77de;"></i> Mejorar la retención y satisfacción del cliente</li>
+                  <li><i class="bi bi-dash"></i><i class="fa-solid fa-plus fa-beat-fade" style="color: #3b77de;"></i> ¡Y mucho más!</li>
+                </ul>
+                <p class="lead">Descubre cómo Aware CallManager puede transformar tu call center y llevar tu negocio al siguiente nivel. ¡Contáctanos hoy para obtener más información y una demostración gratuita!</p>
+              </div>
+            </div>
+          </div>
+        </section>
+       </div> 
+     
+      <div class="container shadow bg-primary" style="margin-top: -30px;">
+        <section class="container-fluid hero-section bg-primary text-white py-5">
+          <div class="container">
+            <div class="row-cols-2">
+              <div class="col-lg-12 mx-auto text-center">
+                
+                <h1 class="display-4 mb-3">Aware Contact Center Manager</h1>
+                <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6"><p class="lead">Optimiza la gestión de tus campañas telefónicas con Aware Contact Center Manager, una solución integral que combina las modalidades Inbound y Outbound. Implementa marcadores progresivos y predictivos para mejorar la productividad y ofrecer una experiencia de cliente excepcional. Además, amplía tus posibilidades de atención al cliente al integrar simultáneamente diversos canales de comunicación en redes sociales, permitiéndote estar siempre conectado con tus clientes a través de sus plataformas preferidas.</p></div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="container-fluid" style="height: 200px;"></div>    
+      <div class="parallax"></div>
+      <div class="container-fluid" style="height: 200px;"></div>
+      <div class="container text-end" style="height:300px;background-color:rgb(255, 255, 255);">
+          <div class="row">
+            <div class="col">
+              <h4>Analiza la disponibilidad de agentes en el sistema para así predecir el tiempo medio de gestión y mantener a los usuarios con llamadas disminuyendo los tiempos de espera entre gestiones</h4>
+
+            </div>
+            <div class="col">
+             <img src="./assets/aware-tiempos.png" alt="">
+            </div>
+          </div>
+      </div>
+      <div class="container-fluid" style="height: 200px;"></div>
+      
+      
+      <div class="container-fluid" style="height: 20px;"></div>
+
+  </body>
+
+  <footer class=" text-white py-5" style="background-color: #2c3e50">
+    
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="mb-3">Acerca de nosotros</h5>
+          <p class="about-text">Aware es una empresa líder en soluciones de gestión de contact center, comprometida con la innovación y la excelencia en la atención al cliente. Nuestra plataforma unifica la comunicación omnicanal y las herramientas de análisis en tiempo real, permitiendo a las empresas optimizar sus operaciones y brindar experiencias excepcionales a sus clientes.</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="mb-3">Enlaces rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none text-white">Inicio</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Nuestros Socios</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Cloud</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Contanos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="mb-3">Contáctanos</h5>
+          <p><i class="bi bi-envelope-fill me-2"></i>ventas@awareccm.com</p>
+          <p><i class="bi bi-telephone-fill me-2"></i></i><img src="./assets/banderas/chile.png" alt="" style="height: 20px;">   +56 977984026</p>
+          <p><i class="bi bi-telephone-fill me-2"></i></i><img src="./assets/banderas/peru.png" alt="" style="height: 20px;">   +51 957426217</p>
+          <p><i class="bi bi-telephone-fill me-2"></i></i><img src="./assets/banderas/colombia.png" alt="" style="height: 20px;">   +57 3015778847</p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col text-start">
+          <p>&copy; 2023 AWARE Contact Center Manager. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
+<style>
+  .linknav {
+       color: #0098DD;
+       border-bottom-color: #6d6d6d;
+       border-bottom-width: 20px;
+   }
+   
+   .linknav:hover {
+       color: #FFFF;
+       border-bottom-color: #0098DD;
+       border-bottom-width: 10px;
+   }
+   .linknav:focus{
+       color: #F38533;
+       border-bottom-color: #0098DD;
+       border-bottom-width: 10px;
+       
+   }
+   .parallax {
+       background-image: url("./assets/marvin-meyer-SYTO3xs06fU-unsplash.jpg");
+       min-height: 500px;
+       background-attachment: fixed;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+     }
+     
+
+.about-text {
+text-align: justify;
+}
+
+
+.demo {
+  color: #F38533;
+
+}
+
+.demo:hover {
+  color: #FFFF;
+
+
+}
+
+
+
+
+.linknav {
+  color: #0098DD;
+
+}
+
+.linknav:hover {
+  color: #FFFF;
+
+}
+
+.nav-tabs .nav-link {
+height: 40px;
+margin-bottom: 0px;
+background: white;
+border-top-color: rgb(104, 104, 104);
+border-top-width: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+color:#2c3e50;
+;
+border-bottom-width: 0px;
+border-bottom-color: white;
+
+}
+.nav-tabs:hover .nav-link:hover {
+margin-bottom: 0px;
+background: white;
+border-top-color: rgb(83, 83, 83);
+border-top-width: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-width: 0px;
+border-bottom-color: white;
+color: gray;
+}
+.nav-tabs:active .nav-link:active {
+margin-bottom: 0px;
+background: rgb(80, 70, 70);
+border-top-color: rgb(83, 83, 83);
+border-top-width: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+color: gray;
+border-bottom-width: 0px;
+border-bottom-color: white;
+}
+
+
+
+.mi-div {
+position: absolute;
+overflow: hidden; /* Esconde cualquier parte del video que exceda el tamaño del div */
+width: 500px; /* Ancho del div */
+height: 300px; /* Altura del div */
+}
+
+.video-background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+overflow: hidden; /* Esconde cualquier parte del video que exceda el tamaño del div */
+clip-path: polygon(55% 0%, 100%, 25% 100%);
+}
+.video-background-footer {
+object-fit: cover;  
+width: 100%;
+height: 200px;
+z-index: -1;
+overflow: hidden; /* Esconde cualquier parte del video que exceda el tamaño del div */
+
+}
+.video-background-side {
+object-fit: cover;  
+width: 400px;
+height: 400px;
+z-index: -1;
+overflow: hidden; /* Esconde cualquier parte del video que exceda el tamaño del div */
+
+}
+
+.video-background video {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Ajusta el tamaño del video al tamaño del div */
+}
+.overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 1; /* Asegura que el overlay quede encima del video pero debajo del contenido del div */
+}
+.hero-section {
+min-height: 70vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+
+.aware-callmanager {
+background-color: #f8f9fa00;
+font-family: 'Arial', sans-serif;
+}
+
+.aware-callmanager h2 {
+font-weight: bold;
+color: #333;
+}
+
+.aware-callmanager p.lead {
+font-size: 1.1rem;
+color: #666;
+}
+
+.aware-callmanager ul {
+padding: 0;
+}
+
+.aware-callmanager li {
+margin-bottom: 0.5rem;
+}
+
+.aware-callmanager i {
+margin-right: 0.5rem;
+font-size: 1.2rem;
+color: #007bff;
+}
+.attention-grabbing-section {
+  background-image: linear-gradient(120deg, #2069a5 0%, #024c70 100%);
+  color: #ffffff;
+  padding: 4rem 2rem;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.attention-grabbing-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.attention-grabbing-section p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.text-shadow {
+text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+.shadow-svg {
+filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+
+
+
+    #demo-section {
+      background-color: #f7f7f7;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    #demo-section h2 {
+      color: #0099ff;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    
+    #demo-section p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    
+    #demo-section form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    
+    #demo-section label {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    #demo-section input[type="tel"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    #demo-section button {
+      background-color: #0099ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    #demo-section button:hover {
+      background-color: #0077cc;
+    }
+
+
+
+
+
+
+ </style>
+
+
+

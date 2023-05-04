@@ -1,0 +1,223 @@
+
+
+.about-text {
+    text-align: justify;
+  }
+  .linknav {
+      color: #0098DD;
+      border-bottom-color: #6d6d6d;
+      border-bottom-width: 20px;
+  }
+  
+  .linknav:hover {
+      color: #FFFF;
+      border-bottom-color: #0098DD;
+      border-bottom-width: 10px;
+  }
+  .linknav:focus{
+      color: #F38533;
+      border-bottom-color: #0098DD;
+      border-bottom-width: 10px;
+      
+  }
+.nav-tabs .nav-link {
+  height: 40px;
+    margin-bottom: 0px;
+    background: white;
+    border-top-color: rgb(104, 104, 104);
+    border-top-width: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color:#2c3e50;
+;
+    border-bottom-width: 0px;
+    border-bottom-color: white;
+    
+  }
+.nav-tabs:hover .nav-link:hover {
+    margin-bottom: 0px;
+    background: white;
+    border-top-color: rgb(83, 83, 83);
+    border-top-width: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-width: 0px;
+    border-bottom-color: white;
+    color: gray;
+  }
+  .nav-tabs:active .nav-link:active {
+    margin-bottom: 0px;
+    background: rgb(80, 70, 70);
+    border-top-color: rgb(83, 83, 83);
+    border-top-width: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: gray;
+    border-bottom-width: 0px;
+    border-bottom-color: white;
+  }
+
+   
+
+  .mi-div {
+    position: absolute;
+    overflow: hidden; /* Esconde cualquier parte del video que exceda el tamaño del div */
+    width: 500px; /* Ancho del div */
+    height: 300px; /* Altura del div */
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden; /* Esconde cualquier parte del video que exceda el tamaño del div */
+    clip-path: polygon(55% 0%, 100%, 25% 100%);
+}
+.video-background-footer {
+    object-fit: cover;  
+    width: 100%;
+    height: 200px;
+    z-index: -1;
+    overflow: hidden; /* Esconde cualquier parte del video que exceda el tamaño del div */
+
+}
+.video-background-side {
+    object-fit: cover;  
+    width: 400px;
+    height: 400px;
+    z-index: -1;
+    overflow: hidden; /* Esconde cualquier parte del video que exceda el tamaño del div */
+
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el tamaño del video al tamaño del div */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* Asegura que el overlay quede encima del video pero debajo del contenido del div */
+}
+.hero-section {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.aware-callmanager {
+  background-color: #f8f9fa00;
+  font-family: 'Arial', sans-serif;
+}
+
+.aware-callmanager h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+.aware-callmanager p.lead {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.aware-callmanager ul {
+  padding: 0;
+}
+
+.aware-callmanager li {
+  margin-bottom: 0.5rem;
+}
+
+.aware-callmanager i {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+.attention-grabbing-section {
+      background-image: linear-gradient(120deg, #2069a5 0%, #024c70 100%);
+      color: #ffffff;
+      padding: 4rem 2rem;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+    }
+
+    .attention-grabbing-section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    .attention-grabbing-section p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+    .text-shadow {
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+.shadow-svg {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+
+
+        #demo-section {
+          background-color: #f7f7f7;
+          padding: 20px;
+          border-radius: 10px;
+        }
+        
+        #demo-section h2 {
+          color: #0099ff;
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+        
+        #demo-section p {
+          font-size: 16px;
+          line-height: 1.5;
+          margin-bottom: 20px;
+        }
+        
+        #demo-section form {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
+        
+        #demo-section label {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+        
+        #demo-section input[type="tel"] {
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+        
+        #demo-section button {
+          background-color: #0099ff;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          padding: 10px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        
+        #demo-section button:hover {
+          background-color: #0077cc;
+        }
